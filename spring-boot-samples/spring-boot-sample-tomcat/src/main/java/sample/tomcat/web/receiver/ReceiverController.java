@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package sample.tomcat.web;
+package sample.tomcat.web.receiver;
 
 import java.io.DataOutputStream;
 import java.io.File;
