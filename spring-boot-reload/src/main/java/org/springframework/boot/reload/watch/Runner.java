@@ -36,7 +36,7 @@ public class Runner {
 		FileSystemWatcher fsw = new FileSystemWatcher(l);
 		fsw.register(new File(args[0]));
 		prefix = args[0];
-		Thread.sleep(100000); // sit here for 100seconds
+		Thread.sleep(10000000); // sit here for 100seconds
 		fsw.shutdown();
 	}
 
@@ -51,7 +51,13 @@ public class Runner {
 				File f = files[i];
 				String uploadPath = null;
 				if (f.toString().startsWith(prefix)) {
-					uploadPath = f.toString().substring(prefix.length() + 1);
+					try {
+						uploadPath = f.toString().substring(prefix.length() + 1);
+					}
+					catch (Exception e) {
+						e.printStackTrace();
+						System.out.println(f + "   " + prefix);
+					}
 				}
 				System.out.println("Sending update to " + uploadPath);
 				String cmd = "curl -Ffilename=" + uploadPath + " -Ffile=@" + f.toString()
