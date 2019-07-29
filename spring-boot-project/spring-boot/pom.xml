@@ -16,6 +16,12 @@
 		<main.basedir>${basedir}/../..</main.basedir>
 	</properties>
 	<dependencies>
+
+<dependency>
+<groupId>org.springframework</groupId>
+<artifactId>graal-processor</artifactId>
+<version>0.0.1.BUILD-SNAPSHOT</version>
+</dependency>
 		<!-- Compile -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -489,6 +495,14 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+<!--
+<configuration>
+<compilerArgs>
+<arg>-Aorg.springframework.graal.processor.groupid=org.springframework.boot</arg>
+<arg>-Aorg.springframework.graal.processor.artifactId=spring-boot</arg>
+                    </compilerArgs>
+</configuration>
+-->
 				<executions>
 					<execution>
 						<id>default-compile</id>

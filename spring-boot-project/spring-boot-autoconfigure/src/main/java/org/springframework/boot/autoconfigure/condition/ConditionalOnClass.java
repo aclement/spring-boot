@@ -23,6 +23,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 import org.springframework.context.annotation.Conditional;
+import org.springframework.core.annotation.CompilationHint;
 
 /**
  * {@link Conditional} that only matches when the specified classes are on the classpath.
@@ -39,6 +40,7 @@ import org.springframework.context.annotation.Conditional;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Conditional(OnClassCondition.class)
+@CompilationHint(member = { "value" },access={"resource"})
 public @interface ConditionalOnClass {
 
 	/**

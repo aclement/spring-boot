@@ -24,6 +24,7 @@ import java.lang.annotation.Target;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
+import org.springframework.core.annotation.CompilationHint;
 
 /**
  * Enable support for {@link ConfigurationProperties} annotated beans.
@@ -37,6 +38,7 @@ import org.springframework.context.annotation.Import;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Import(EnableConfigurationPropertiesImportSelector.class)
+@CompilationHint(member = { "value" },access={"resources"})
 public @interface EnableConfigurationProperties {
 
 	/**

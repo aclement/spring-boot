@@ -19,6 +19,7 @@ package org.springframework.boot;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 
+import org.springframework.core.annotation.CompilationHint;
 /**
  * Interface used to indicate that a bean should <em>run</em> when it is contained within
  * a {@link SpringApplication}. Multiple {@link CommandLineRunner} beans can be defined
@@ -31,6 +32,7 @@ import org.springframework.core.annotation.Order;
  * @author Dave Syer
  * @see ApplicationRunner
  */
+@CompilationHint(access="resource")
 @FunctionalInterface
 public interface CommandLineRunner {
 

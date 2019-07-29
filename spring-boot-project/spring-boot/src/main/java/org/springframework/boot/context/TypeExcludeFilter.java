@@ -27,6 +27,9 @@ import org.springframework.core.type.classreading.MetadataReader;
 import org.springframework.core.type.classreading.MetadataReaderFactory;
 import org.springframework.core.type.filter.TypeFilter;
 
+import org.springframework.core.annotation.CompilationHint;
+
+
 /**
  * Provides exclusion {@link TypeFilter TypeFilters} that are loaded from the
  * {@link BeanFactory} and automatically applied to {@code SpringBootApplication}
@@ -47,6 +50,7 @@ import org.springframework.core.type.filter.TypeFilter;
  * @author Phillip Webb
  * @since 1.4.0
  */
+@CompilationHint(access="reflection:constructors")
 public class TypeExcludeFilter implements TypeFilter, BeanFactoryAware {
 
 	private BeanFactory beanFactory;

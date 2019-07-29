@@ -22,6 +22,7 @@ import java.util.Set;
 import org.springframework.core.convert.TypeDescriptor;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.converter.GenericConverter;
+import org.springframework.core.annotation.CompilationHint;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.unit.DataSize;
 import org.springframework.util.unit.DataUnit;
@@ -33,6 +34,7 @@ import org.springframework.util.unit.DataUnit;
  * @author Stephane Nicoll
  * @see DataSizeUnit
  */
+@CompilationHint(value= {DataSize.class})
 final class StringToDataSizeConverter implements GenericConverter {
 
 	@Override

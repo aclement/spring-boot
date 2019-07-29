@@ -26,12 +26,15 @@ import org.springframework.core.type.classreading.MetadataReader;
 import org.springframework.core.type.classreading.MetadataReaderFactory;
 import org.springframework.core.type.filter.TypeFilter;
 
+import org.springframework.core.annotation.CompilationHint;
+
 /**
  * A {@link TypeFilter} implementation that matches registered auto-configuration classes.
  *
  * @author Stephane Nicoll
  * @since 1.5.0
  */
+@CompilationHint(access="reflection:constructors")
 public class AutoConfigurationExcludeFilter implements TypeFilter, BeanClassLoaderAware {
 
 	private ClassLoader beanClassLoader;
